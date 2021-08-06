@@ -132,3 +132,19 @@ button[disabled=disabled], button:disabled {
 .campo-invalido{
 	border: 1px solid red;
 }
+
+
+.sumir {
+	opacity: 0;
+	transition: 0.5s;
+}
+
+#filtrar{
+	width: 200px;
+	height: 35px;
+	margin-bottom: 20px;
+}
+
+.display{
+	display: none;
+}

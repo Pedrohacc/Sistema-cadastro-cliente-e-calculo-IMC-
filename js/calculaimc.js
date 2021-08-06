@@ -15,17 +15,20 @@ alert("CLicou ai? clicou aqui");
 
 var paciente = document.querySelectorAll(".paciente");
 for (var i=0; paciente.length; i++){
-var peso = paciente[i].querySelector(".info-peso").textContent;
-var altura = paciente[i].querySelector(".info-altura").textContent;
+var peso = paciente[i].querySelector(".info-peso").textContent
+var altura = paciente[i].querySelector(".info-altura").textContent
 // Tem que especificar qual vai ser calculado primeiro
 var IMC = calculaIMC(peso, altura);
 var imcresult = paciente[i].querySelector(".info-imc");
 
-if (peso <= 0 || peso >=1000){
+var pesovalid = validapeso(peso);
+var alturavalid = validaaltura(altura);
+
+if (pesovalid == false){
         imcresult.textContent = "Peso Inválido"
        //classList acessa as classes e o add adiciona a classe desejada
         paciente[i].classList.add("paciente-invalido")
-    } else if(altura >= 3.00){
+    } else if(alturavalid == false){
         imcresult.textContent = "Altura inválida"
         paciente[i].classList.add("paciente-invalido")
     } else{
@@ -35,7 +38,23 @@ if (peso <= 0 || peso >=1000){
 
 }
 
+function validapeso(peso){
+    if (peso <= 0 || peso >=1000){
+      return false;
+    }
+   else{
+     return true
+    }
+}
 
+function validaaltura(altura){
+    if (altura <= 0 || altura >=3.0){
+      return false;
+    }
+   else{
+     return true
+    }
+}
 
 function calculaIMC(peso, altura){
     var IMC = peso /(altura * altura);
