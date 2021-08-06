@@ -10,6 +10,7 @@ botaoadc.addEventListener("click", function(event){
             exibeerro(erros);
             return;
         }
+       
 
     var tabela = document.querySelector("#tabela-pacientes");
     tabela.appendChild(montaTr(paciente));
@@ -19,6 +20,12 @@ botaoadc.addEventListener("click", function(event){
         limpaerros.innerHTML = "";
 
 })
+
+function adicionapaciente(paciente){
+    var pacientetr = montaTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacientetr);
+}
 
 function resultpacienteform(form){
     // declarando objeto e adicionando valores, essa e a Sintaxe

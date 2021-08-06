@@ -5,6 +5,7 @@ tabela.addEventListener("dblclick", function(event){
 // é depois vai ser removido
  event.target.parentNode.classList.add("sumir")
  
+
  setTimeout(function(){
      event.target.parentNode.remove();
         //milesegundos
